@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TrafficSense AI</title><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header><div><span class="brand">◉ TrafficSense <b>AI</b></span><small>Autonomous Smart City Simulator</small></div>
+<div class="live"><i></i> SIMULATION ENVIRONMENT</div></header>
+<main>
+<section class="hero"><div><p class="eyebrow">INTELLIGENT TRANSPORTATION PLATFORM</p><h1>City traffic,<br><em>under control.</em></h1>
+<p class="muted">Explore autonomous vehicle movement, adaptive signals and smart-city traffic scenarios in a safe virtual environment.</p></div>
+<div class="hero-actions"><button id="startBtn">▶ Start simulation</button><button class="secondary" id="pauseBtn">Ⅱ Pause</button><button class="secondary" id="resetBtn">↻ Reset</button></div></section>
+<section class="stats">
+<div class="stat"><span>Vehicles in city</span><strong id="vehicleCount">8</strong><small>Virtual fleet</small></div>
+<div class="stat"><span>Traffic density</span><strong id="density">MEDIUM</strong><small>Calculated from simulation</small></div>
+<div class="stat"><span>Signal recommendation</span><strong><span id="greenTime">30</span>s</strong><small>Green phase duration</small></div>
+<div class="stat"><span>Weather mode</span><strong id="weatherValue">CLEAR</strong><small>Simulation condition</small></div>
+</section>
+<section class="layout">
+<div class="panel city-panel"><div class="panel-head"><div><p class="eyebrow">DIGITAL TWIN / LIVE VIEW</p><h2>Virtual city map</h2></div><span class="pill">● LIVE SIMULATION</span></div>
+<canvas id="city" width="900" height="510" aria-label="Virtual traffic city simulation"></canvas>
+<div class="legend"><span>🚗 Vehicle</span><span>🚑 Emergency</span><span>🟢 Green signal</span><span>🔴 Red signal</span></div></div>
+<aside class="panel controls"><p class="eyebrow">CONTROL CENTER</p><h2>Scenario controls</h2>
+<label>Vehicle type<select id="vehicleType"><option>CAR</option><option>BUS</option><option>BIKE</option></select></label>
+<button id="addVehicle">＋ Add vehicle</button><button id="addAmbulance" class="emergency">＋ Add ambulance</button>
+<label>Weather condition<select id="weather"><option value="CLEAR">Clear</option><option value="RAIN">Rain</option><option value="FOG">Fog</option></select></label>
+<button id="applyWeather" class="secondary">Apply weather</button>
+<button id="blockRoad" class="secondary">Toggle road obstacle</button>
+<button id="accident" class="secondary">Report demo incident</button>
+<div class="signal-box"><h3>Intersection signals</h3><div><span>North ↕ South</span><b class="green" id="signalA">GREEN</b></div><div><span>East ↔ West</span><b class="red" id="signalB">RED</b></div></div>
+</aside></section>
+<section class="grid2">
+<div class="panel"><p class="eyebrow">NAVIGATION / DSA</p><h2>Route optimizer</h2><div class="route-form"><label>From<select id="from"><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select></label><label>To<select id="to"><option>F</option><option>A</option><option>B</option><option>C</option><option>D</option></select></label><button id="routeBtn">Find route</button></div><p id="routeResult" class="result">Choose two city nodes to calculate a route using Dijkstra's algorithm.</p></div>
+<div class="panel"><p class="eyebrow">FLEET / PARKING</p><h2>City resources</h2><div id="parking" class="parking"></div><p id="fleetSummary" class="muted">Loading fleet information…</p></div>
+</section>
+<section class="panel"><p class="eyebrow">EVENT STREAM</p><h2>System activity</h2><div id="events" class="events"><p>System ready. Start the simulation to begin.</p></div></section>
+<footer>TrafficSense AI · Educational simulation only · Not for real-world vehicle or traffic-signal control</footer>
+</main><script src="/app.js"></script>
+</body></html>
